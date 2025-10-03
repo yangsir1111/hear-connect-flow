@@ -80,11 +80,11 @@ const Features = () => {
       
       <main className="flex-1 pt-16">
         {/* Hero Section */}
-        <section className="gradient-soft py-20">
+        <section className="py-20 bg-gradient-to-br from-[#E8F4F8] to-[#F0F4F8]">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                听呗的核心功能
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance text-[#2C4A6B]">
+                核心功能
               </h1>
               <p className="text-xl text-muted-foreground">
                 强大的语音识别技术，为您提供无障碍沟通体验
@@ -98,23 +98,23 @@ const Features = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {coreFeatures.map((feature, index) => (
-                <Card key={index} className="hover-lift">
+                <Card key={index} className="hover-lift bg-white shadow-md border-none">
                   <CardHeader>
                     <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-lg bg-secondary/10">
-                        <feature.icon className="h-6 w-6 text-secondary" />
+                      <div className="p-4 rounded-full bg-[#E8F4F8]">
+                        <feature.icon className="h-8 w-8 text-[#2C4A6B]" />
                       </div>
                       <div>
-                        <CardTitle className="mb-2">{feature.title}</CardTitle>
-                        <CardDescription>{feature.description}</CardDescription>
+                        <CardTitle className="mb-2 text-[#2C4A6B]">{feature.title}</CardTitle>
+                        <CardDescription className="text-base">{feature.description}</CardDescription>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2">
+                    <ul className="space-y-3">
                       {feature.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className="text-secondary mt-1">•</span>
+                        <li key={idx} className="flex items-start gap-3 text-sm text-muted-foreground">
+                          <span className="text-[#E8956D] mt-1 text-lg">•</span>
                           <span>{detail}</span>
                         </li>
                       ))}
@@ -127,18 +127,18 @@ const Features = () => {
         </section>
 
         {/* Additional Features */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-20 bg-gradient-to-br from-[#F8F9FA] to-[#E8F4F8]">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">更多特色功能</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-[#2C4A6B]">更多特色功能</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {additionalFeatures.map((feature, index) => (
-                <Card key={index} className="text-center hover-lift">
+                <Card key={index} className="text-center hover-lift bg-white shadow-md border-none">
                   <CardHeader>
-                    <div className="mx-auto p-4 rounded-full bg-secondary/10 w-fit mb-4">
-                      <feature.icon className="h-8 w-8 text-secondary" />
+                    <div className="mx-auto p-4 rounded-full bg-[#E8F4F8] w-fit mb-4">
+                      <feature.icon className="h-8 w-8 text-[#E8956D]" />
                     </div>
-                    <CardTitle className="text-lg">{feature.title}</CardTitle>
-                    <CardDescription>{feature.description}</CardDescription>
+                    <CardTitle className="text-lg text-[#2C4A6B]">{feature.title}</CardTitle>
+                    <CardDescription className="text-base">{feature.description}</CardDescription>
                   </CardHeader>
                 </Card>
               ))}
@@ -147,32 +147,32 @@ const Features = () => {
         </section>
 
         {/* Technical Specs */}
-        <section className="py-20">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">技术规格</h2>
-              <Card>
-                <CardContent className="pt-6">
-                  <dl className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <h2 className="text-3xl font-bold text-center mb-12 text-[#2C4A6B]">技术规格</h2>
+              <Card className="bg-gradient-to-br from-[#E8F4F8] to-white shadow-lg border-none">
+                <CardContent className="pt-8 pb-8">
+                  <dl className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <dt className="font-semibold text-secondary mb-1">平台要求</dt>
-                      <dd className="text-muted-foreground">微信小程序环境</dd>
+                      <dt className="font-semibold text-[#E8956D] mb-2 text-lg">平台要求</dt>
+                      <dd className="text-muted-foreground text-base">微信小程序环境</dd>
                     </div>
                     <div>
-                      <dt className="font-semibold text-secondary mb-1">网络要求</dt>
-                      <dd className="text-muted-foreground">最低128kbps</dd>
+                      <dt className="font-semibold text-[#E8956D] mb-2 text-lg">网络要求</dt>
+                      <dd className="text-muted-foreground text-base">最低128kbps</dd>
                     </div>
                     <div>
-                      <dt className="font-semibold text-secondary mb-1">识别延迟</dt>
-                      <dd className="text-muted-foreground">小于200毫秒</dd>
+                      <dt className="font-semibold text-[#E8956D] mb-2 text-lg">识别延迟</dt>
+                      <dd className="text-muted-foreground text-base">小于200毫秒</dd>
                     </div>
                     <div>
-                      <dt className="font-semibold text-secondary mb-1">识别准确率</dt>
-                      <dd className="text-muted-foreground">98%以上</dd>
+                      <dt className="font-semibold text-[#E8956D] mb-2 text-lg">识别准确率</dt>
+                      <dd className="text-muted-foreground text-base">98%以上</dd>
                     </div>
                     <div className="md:col-span-2">
-                      <dt className="font-semibold text-secondary mb-1">设备兼容性</dt>
-                      <dd className="text-muted-foreground">支持iOS 10+和Android 5.0+设备</dd>
+                      <dt className="font-semibold text-[#E8956D] mb-2 text-lg">设备兼容性</dt>
+                      <dd className="text-muted-foreground text-base">支持iOS 10+和Android 5.0+设备</dd>
                     </div>
                   </dl>
                 </CardContent>

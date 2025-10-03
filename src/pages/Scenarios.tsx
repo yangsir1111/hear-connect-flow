@@ -102,11 +102,11 @@ const Scenarios = () => {
       
       <main className="flex-1 pt-16">
         {/* Hero Section */}
-        <section className="gradient-soft py-20">
+        <section className="py-20 bg-gradient-to-br from-[#E8F4F8] to-[#F0F4F8]">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                听呗的使用场景
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance text-[#2C4A6B]">
+                使用场景
               </h1>
               <p className="text-xl text-muted-foreground">
                 无论在何处，听呗都能帮您打破沟通障碍
@@ -119,14 +119,16 @@ const Scenarios = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <Tabs value={activeScenario} onValueChange={setActiveScenario} className="w-full">
-              <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 mb-12 h-auto">
+              <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 mb-12 h-auto bg-white shadow-md">
                 {scenarios.map((scenario) => (
                   <TabsTrigger
                     key={scenario.id}
                     value={scenario.id}
-                    className="flex flex-col items-center gap-2 py-4"
+                    className="flex flex-col items-center gap-3 py-6 data-[state=active]:bg-[#E8F4F8] data-[state=active]:text-[#2C4A6B]"
                   >
-                    <scenario.icon className="h-6 w-6" />
+                    <div className="p-3 rounded-full bg-[#E8956D]/10 data-[state=active]:bg-[#E8956D]/20">
+                      <scenario.icon className="h-6 w-6 text-[#E8956D]" />
+                    </div>
                     <span className="text-sm font-medium">{scenario.title}</span>
                   </TabsTrigger>
                 ))}
@@ -147,35 +149,35 @@ const Scenarios = () => {
                     {/* Content */}
                     <div className="order-1 lg:order-2 space-y-6">
                       <div>
-                        <h2 className="text-3xl font-bold mb-2">{scenario.title}</h2>
-                        <p className="text-xl text-secondary">{scenario.subtitle}</p>
+                        <h2 className="text-3xl font-bold mb-2 text-[#2C4A6B]">{scenario.title}</h2>
+                        <p className="text-xl text-[#E8956D]">{scenario.subtitle}</p>
                       </div>
 
-                      <Card className="border-destructive/20 bg-destructive/5">
+                      <Card className="border-none bg-red-50 shadow-sm">
                         <CardHeader>
-                          <CardTitle className="text-lg text-destructive">痛点问题</CardTitle>
+                          <CardTitle className="text-lg text-red-600">痛点问题</CardTitle>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-muted-foreground">{scenario.problem}</p>
+                          <p className="text-muted-foreground text-base">{scenario.problem}</p>
                         </CardContent>
                       </Card>
 
-                      <Card className="border-secondary/20 bg-secondary/5">
+                      <Card className="border-none bg-[#E8F4F8] shadow-sm">
                         <CardHeader>
-                          <CardTitle className="text-lg text-secondary">听呗解决方案</CardTitle>
+                          <CardTitle className="text-lg text-[#2C4A6B]">听呗解决方案</CardTitle>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-muted-foreground">{scenario.solution}</p>
+                          <p className="text-muted-foreground text-base">{scenario.solution}</p>
                         </CardContent>
                       </Card>
 
                       <div>
-                        <h3 className="font-semibold mb-3">核心优势</h3>
-                        <ul className="space-y-2">
+                        <h3 className="font-semibold mb-4 text-[#2C4A6B] text-lg">核心优势</h3>
+                        <ul className="space-y-3">
                           {scenario.benefits.map((benefit, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                              <span className="text-secondary mt-1">✓</span>
-                              <span>{benefit}</span>
+                            <li key={idx} className="flex items-start gap-3 text-sm text-muted-foreground">
+                              <span className="text-[#E8956D] mt-1 text-lg">✓</span>
+                              <span className="text-base">{benefit}</span>
                             </li>
                           ))}
                         </ul>
@@ -184,15 +186,15 @@ const Scenarios = () => {
                   </div>
 
                   {/* User Story */}
-                  <Card className="mt-12 bg-gradient-to-br from-secondary/5 to-accent/5 border-secondary/20">
+                  <Card className="mt-12 bg-gradient-to-br from-[#FFF8F3] to-[#FFF5EE] border-none shadow-lg">
                     <CardHeader>
-                      <CardTitle className="text-2xl">{scenario.story.name}</CardTitle>
+                      <CardTitle className="text-2xl text-[#2C4A6B]">{scenario.story.name}</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-muted-foreground leading-relaxed text-base">
                         {scenario.story.content}
                       </p>
-                      <blockquote className="border-l-4 border-secondary pl-4 italic text-foreground">
+                      <blockquote className="border-l-4 border-[#E8956D] pl-4 italic text-foreground text-lg">
                         "{scenario.story.quote}"
                       </blockquote>
                     </CardContent>
@@ -204,16 +206,16 @@ const Scenarios = () => {
         </section>
 
         {/* Public Services Note */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-20 bg-gradient-to-br from-[#F8F9FA] to-[#E8F4F8]">
           <div className="container mx-auto px-4">
-            <Card className="max-w-4xl mx-auto">
+            <Card className="max-w-4xl mx-auto bg-white shadow-lg border-none">
               <CardHeader>
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-secondary/10">
-                    <Building className="h-6 w-6 text-secondary" />
+                  <div className="p-4 rounded-full bg-[#E8F4F8]">
+                    <Building className="h-8 w-8 text-[#2C4A6B]" />
                   </div>
                   <div>
-                    <CardTitle className="text-2xl mb-2">公共服务场景</CardTitle>
+                    <CardTitle className="text-2xl mb-2 text-[#2C4A6B]">公共服务场景</CardTitle>
                     <CardDescription className="text-base">
                       银行、政务大厅、医院等公共服务场所的理想助手
                     </CardDescription>
@@ -221,19 +223,19 @@ const Scenarios = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-muted-foreground mb-6 text-base leading-relaxed">
                   在银行办理业务、政务大厅办事、医院挂号等场景中，听呗能够帮助听障人士独立完成各项事务，无需依赖他人，保护个人隐私，提高办事效率。
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {[
                     "独立完成银行业务办理",
                     "清楚理解工作人员的说明",
                     "准确填写各类表格和文件",
                     "保护个人隐私和信息安全"
                   ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="text-secondary mt-1">•</span>
-                      <span>{item}</span>
+                    <li key={idx} className="flex items-start gap-3 text-sm text-muted-foreground">
+                      <span className="text-[#E8956D] mt-1 text-lg">•</span>
+                      <span className="text-base">{item}</span>
                     </li>
                   ))}
                 </ul>

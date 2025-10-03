@@ -4,7 +4,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import heroImg from "@/assets/hero-bg.jpg";
+import patternBg from "@/assets/pattern-bg.png";
+import heroIllustration from "@/assets/hero-illustration.png";
 import qrCode from "@/assets/qr-code.jpg";
 import familyImg from "@/assets/scene-family.jpg";
 import medicalImg from "@/assets/scene-medical.jpg";
@@ -114,39 +115,47 @@ const Index = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
+        <section className="relative pt-32 pb-20 overflow-hidden bg-[#2C4A6B]">
           <div 
             className="absolute inset-0 z-0"
             style={{
-              backgroundImage: `url(${heroImg})`,
+              backgroundImage: `url(${patternBg})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              opacity: 0.15
+              opacity: 0.3
             }}
           />
-          <div className="absolute inset-0 gradient-hero opacity-90 z-0" />
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="text-center lg:text-left text-primary-foreground">
-                <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
+              <div className="text-center lg:text-left">
+                <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance text-white">
                   听呗，让沟通零距离
                 </h1>
-                <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
+                <p className="text-xl md:text-2xl mb-8 text-white/90">
                   专为听障人士及沟通不便者设计的<br />实时语音转文字工具
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button size="lg" variant="hero" className="text-lg">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                  <Button size="lg" className="text-lg bg-[#E8956D] hover:bg-[#E8956D]/90 text-white">
                     立即体验 <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                   <Button size="lg" variant="outline" className="text-lg bg-white/10 text-white border-white/20 hover:bg-white/20">
                     了解更多
                   </Button>
                 </div>
+                
+                {/* Illustration */}
+                <div className="flex justify-center lg:justify-start">
+                  <img 
+                    src={heroIllustration} 
+                    alt="听呗使用场景" 
+                    className="w-full max-w-md rounded-2xl"
+                  />
+                </div>
               </div>
 
               <div className="flex justify-center">
-                <Card className="bg-card/95 backdrop-blur-sm shadow-[var(--shadow-card)] max-w-sm">
+                <Card className="bg-white shadow-2xl max-w-sm">
                   <CardHeader className="text-center">
                     <CardTitle className="text-2xl">扫码体验听呗</CardTitle>
                     <CardDescription>打开微信扫一扫</CardDescription>

@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <img src={logo} alt="听呗" className="h-10 w-auto mb-4 brightness-0 invert" />
+            <img src={logo} alt="听呗" className="h-44 w-auto mb-4 brightness-0 invert" />
             <p className="text-primary-foreground/80 text-sm mb-4">
               让沟通零距离，专为听障人士及沟通不便者设计的实时语音转文字工具
             </p>
@@ -60,7 +60,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <MessageCircle className="h-4 w-4 text-secondary" />
-                <span className="text-primary-foreground/80">微信公众号：听呗助手</span>
+                <span className="text-primary-foreground/80">微信公众号：听呗-AI实时语音翻译助手</span>
               </li>
             </ul>
           </div>

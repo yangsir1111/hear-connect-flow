@@ -184,7 +184,7 @@ const About = () => {
                           社交媒体
                         </h3>
                         <div className="space-y-2 text-sm text-muted-foreground">
-                          <p>微信公众号：听呗助手</p>
+                          <p>微信公众号：听呗-AI实时语音翻译助手</p>
                           <p>微博：@听呗官方</p>
                         </div>
                       </div>

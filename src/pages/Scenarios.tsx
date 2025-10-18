@@ -4,10 +4,10 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import familyImg from "@/assets/scene-family.jpg";
-import medicalImg from "@/assets/scene-medical.jpg";
-import socialImg from "@/assets/scene-social.jpg";
-import workImg from "@/assets/scene-work.jpg";
+import familyImg from "@/assets/scene-family.png";
+import medicalImg from "@/assets/scene-medical.png";
+import socialImg from "@/assets/scene-social.png";
+import workImg from "@/assets/scene-work.png";
 
 const Scenarios = () => {
   const scenarios = [

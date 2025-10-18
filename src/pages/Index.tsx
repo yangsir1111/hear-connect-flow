@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import patternBg from "@/assets/pattern-bg.png";
 import heroIllustration from "@/assets/hero-illustration.png";
-import qrCode from "@/assets/qr-code.jpg";
-import familyImg from "@/assets/scene-family.jpg";
-import medicalImg from "@/assets/scene-medical.jpg";
-import socialImg from "@/assets/scene-social.jpg";
-import workImg from "@/assets/scene-work.jpg";
+import qrCode from "@/assets/qr-code.png";
+import familyImg from "@/assets/scene-family.png";
+import medicalImg from "@/assets/scene-medical.png";
+import socialImg from "@/assets/scene-social.png";
+import workImg from "@/assets/scene-work.png";
 
 const Index = () => {
   const coreValues = [
@@ -139,7 +139,9 @@ const Index = () => {
                   <Button size="lg" className="text-lg bg-[#E8956D] hover:bg-[#E8956D]/90 text-white">
                     立即体验 <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
-                  <Button size="lg" variant="outline" className="text-lg bg-white/10 text-white border-white/20 hover:bg-white/20">
+                  <Button size="lg" variant="outline" className="text-lg bg-white/10 text-white border-white/20 hover:bg-white/20" onClick={() => {
+                    document.getElementById('scenarios-section')?.scrollIntoView({ behavior: 'smooth' });
+                  }}>
                     了解更多
                   </Button>
                 </div>
@@ -154,7 +156,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="flex justify-center">
+              <div className="flex justify-center" id="qr-code-section">
                 <Card className="bg-white shadow-2xl max-w-sm">
                   <CardHeader className="text-center">
                     <CardTitle className="text-2xl">扫码体验听呗</CardTitle>
@@ -237,7 +239,7 @@ const Index = () => {
         </section>
 
         {/* Scenarios */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-background" id="scenarios-section">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">使用场景</h2>
@@ -314,10 +316,18 @@ const Index = () => {
               扫描二维码，开启无障碍沟通新体验
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg">
+              <Button size="lg" variant="cta" className="text-lg" onClick={() => {
+                document.getElementById('qr-code-section')?.scrollIntoView({ behavior: 'smooth' });
+              }}>
                 立即使用 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg bg-white/10 text-white border-white/20 hover:bg-white/20">
+              <Button size="lg" variant="outline" className="text-lg bg-white/10 text-white border-white/20 hover:bg-white/20" onClick={() => {
+                navigator.clipboard.writeText(window.location.origin).then(() => {
+                  alert('网址已复制到剪切板');
+                }).catch(() => {
+                  alert('复制失败，请手动复制网址');
+                });
+              }}>
                 分享给需要的人
               </Button>
             </div>

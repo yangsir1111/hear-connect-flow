@@ -16,7 +16,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.DEV ? "/" : "/hear-connect-flow"}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/features" element={<Features />} />
